@@ -10,7 +10,7 @@ const storage = isGithubMode
       kind: "github" as const,
       repo:
         (process.env.KEYSTATIC_GITHUB_REPO as `${string}/${string}`) ||
-        "CrystelCortez/rosaai-website",
+        "crystel-rosaai/rosaai-website",
     } as const)
   : { kind: "local" as const };
 
