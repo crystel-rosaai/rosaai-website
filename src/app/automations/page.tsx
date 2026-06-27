@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { AutomationsPage } from "./automations-page";
+import { getAutomations } from "@/lib/automations";
 
 export const metadata: Metadata = {
   title: "Workflow Automation Examples | n8n & AI Automations — RosaAI",
@@ -17,10 +18,12 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
+  const automations = getAutomations();
+
   return (
     <>
       <Header />
-      <AutomationsPage />
+      <AutomationsPage automations={automations} />
       <Footer />
     </>
   );
