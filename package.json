@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "fumadocs-mdx && node -e \"require('fs').writeFileSync('.source/index.ts', 'export { docs, meta } from \\\"./server\\\";\\n')\"",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"
